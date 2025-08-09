@@ -1,8 +1,20 @@
+Com base no seu pedido, otimizei o código CSS para usar unidades `px` e aprimorei a responsividade com a adição de um novo ponto de interrupção para tablets. O código agora é mais compacto e se adapta de forma mais suave a diferentes tamanhos de tela.
+
+As principais mudanças foram:
+
+  * **Conversão para `px`**: Todas as unidades `rem` foram convertidas para `px` para atender à sua solicitação.
+  * **Responsividade Aprimorada**: Adicionei uma nova `media query` para telas de até **1024px** (típico de tablets e notebooks) para otimizar o layout. A `media query` para celulares foi mantida e ajustada com os novos valores em `px`.
+  * **Otimização do Código**: Agrupei e simplifiquei algumas propriedades para maior concisão, removendo redundâncias.
+
+-----
+
+### Código CSS Otimizado
+
+```css
 /*
  * ============================================
  * VARIÁVEIS E TEMAS
  * ============================================
- * Define cores e imagens de fundo, agora alinhadas às imagens.
  */
 :root {
   /* Modo Escuro (Padrão) */
@@ -28,7 +40,7 @@
   --bg-image: url('./assets/claro.jpg');
   --bg-color: #d1d9e6;
   --bg-filter: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25));
-  --text-primary: #000000;
+  --text-primary: #000;
   --text-secondary: #3e3636;
   --accent-color: #2980b9;
   --link-bg: #97a4b4b3;
@@ -42,42 +54,27 @@
 
 /*
  * ============================================
- * ESTILOS GLOBAIS E RESET
+ * ESTILOS GLOBAIS
  * ============================================
  */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+* {margin: 0; padding: 0; box-sizing: border-box;}
 
 body {
   font-family: 'Poppins', sans-serif;
   color: var(--text-primary);
-  background: var(--bg-filter), var(--bg-image);
+  background: var(--bg-filter), var(--bg-image) no-repeat center fixed;
   background-color: var(--bg-color);
-  background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
   transition: background-color 0.5s ease, color 0.5s ease;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.5rem;
+  padding: 24px; /* Convertido de 1.5rem */
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: color 0.3s ease;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
+a {text-decoration: none; color: inherit; transition: color 0.3s ease;}
+ul {list-style: none; padding: 0;}
 
 /*
  * ============================================
@@ -87,10 +84,10 @@ ul {
 .container {
   max-width: 600px;
   width: 95%;
-  padding: 2.5rem;
+  padding: 40px; /* Convertido de 2.5rem */
   text-align: center;
   background: var(--link-bg);
-  border-radius: 1.25rem;
+  border-radius: 20px; /* Convertido de 1.25rem */
   box-shadow: var(--box-shadow);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -98,40 +95,25 @@ ul {
   transition: background 0.5s, border-color 0.5s, box-shadow 0.5s;
 }
 
-.profile {
-  padding: 2rem 0;
-}
-
+.profile {padding: 32px 0;} /* Convertido de 2rem */
 .profile img {
   width: 130px;
   height: 130px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid var(--accent-color);
-  margin-bottom: 1rem;
+  margin-bottom: 16px; /* Convertido de 1rem */
   box-shadow: 0 0 10px var(--accent-color);
 }
-
-.profile h1 {
-  font-size: 1.5rem;
-  margin-top: 0.5rem;
-  margin-bottom: 0.25rem;
-}
-
+.profile h1 {font-size: 24px; margin-top: 8px; margin-bottom: 4px;} /* Convertido de 1.5rem, 0.5rem e 0.25rem */
 .profile p {
   font-weight: 500;
-  line-height: 1.6rem;
-  font-size: 1.1rem;
+  line-height: 26px; /* Convertido de 1.6rem */
+  font-size: 18px; /* Convertido de 1.1rem */
   color: var(--text-secondary);
 }
 
-.switch {
-  position: relative;
-  width: 70px;
-  height: 32px;
-  margin: 0.75rem auto;
-}
-
+.switch {position: relative; width: 70px; height: 32px; margin: 12px auto;} /* Convertido de 0.75rem */
 .switch button {
   width: 28px;
   height: 28px;
@@ -149,11 +131,7 @@ ul {
   background-size: 70%;
   background-color: var(--switch-thumb-bg);
 }
-
-.light .switch button {
-  left: calc(100% - 30px);
-}
-
+.light .switch button {left: calc(100% - 30px);}
 .switch span {
   display: block;
   width: 100%;
@@ -164,27 +142,20 @@ ul {
   border: 1.5px solid var(--border-color);
 }
 
-.links {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-  padding: 1.5rem 0;
-}
-
+.links {display: flex; flex-direction: column; gap: 12px; padding: 24px 0;} /* Convertido de 0.75rem e 1.5rem */
 .links a {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 1rem 1.5rem;
+  padding: 16px 24px; /* Convertido de 1rem e 1.5rem */
   background: var(--link-bg);
   border: 1.5px solid var(--border-color);
-  border-radius: 0.6rem;
+  border-radius: 10px; /* Convertido de 0.6rem */
   font-weight: 500;
   transition: background 0.5s, border-color 0.5s, box-shadow 0.3s;
-  font-size: 1rem;
+  font-size: 16px; /* Convertido de 1rem */
   box-shadow: var(--link-shadow);
 }
-
 .links a:hover {
   background: var(--accent-color);
   color: var(--bg-color);
@@ -192,99 +163,80 @@ ul {
   box-shadow: 0 0 10px var(--accent-color);
 }
 
-.techs-container {
-  padding: 1.5rem 0 1rem;
-}
+.techs-container {padding: 24px 0 16px;} /* Convertido de 1.5rem e 1rem */
+.techs-title {font-weight: 600; margin-bottom: 16px; font-size: 16px;} /* Convertido de 1rem */
+.techs-icons {display: flex; justify-content: center; gap: 24px; font-size: 32px; color: var(--tech-icons-color);} /* Convertido de 1.5rem e 2rem */
+.footer {padding: 16px 0; font-size: 13px; color: var(--text-secondary);} /* Convertido de 1rem e 0.8rem */
 
-.techs-title {
-  font-weight: 600;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-}
-
-.techs-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  font-size: 2rem;
-  color: var(--tech-icons-color);
-}
-
-.footer {
-  padding: 1rem 0;
-  font-size: 0.8rem;
-  color: var(--text-secondary);
+/*
+ * ============================================
+ * RESPONSIVIDADE (TABLETS E TELAS MÉDIAS)
+ * ============================================
+ */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 550px;
+  }
 }
 
 /*
  * ============================================
- * RESPONSIVIDADE
+ * RESPONSIVIDADE (SMARTPHONES)
  * ============================================
  */
 @media (max-width: 650px) {
   body {
-    padding: 1rem;
+    padding: 16px;
   }
-
   .container {
     width: 100%;
-    padding: 1.5rem;
-    border-radius: 1rem;
+    padding: 24px;
+    border-radius: 16px;
   }
-
   .profile {
-    padding: 1.5rem 0;
+    padding: 24px 0;
   }
-
   .profile img {
     width: 100px;
     height: 100px;
     border-width: 3px;
   }
-
   .profile h1 {
-    font-size: 1.25rem;
-    margin-top: 0.5rem;
-    margin-bottom: 0.25rem;
+    font-size: 20px;
+    margin-top: 8px;
+    margin-bottom: 4px;
   }
-
   .profile p {
-    font-size: 0.9rem;
-    line-height: 1.4rem;
+    font-size: 14px;
+    line-height: 22px;
   }
-
   .switch {
     width: 60px;
     height: 28px;
-    margin: 0.5rem auto;
+    margin: 8px auto;
   }
-
   .switch button {
     width: 24px;
     height: 24px;
     left: 2px;
   }
-
   .light .switch button {
     left: calc(100% - 26px);
   }
-
   .links a {
-    font-size: 0.9rem;
-    padding: 0.8rem 1.2rem;
+    font-size: 14px;
+    padding: 13px 20px;
   }
-
   .techs-title {
-    font-size: 0.9rem;
+    font-size: 14px;
   }
-
   .techs-icons {
-    font-size: 1.5rem;
-    gap: 1rem;
+    font-size: 24px;
+    gap: 16px;
   }
-
   .footer {
-    font-size: 0.7rem;
-    padding: 0.8rem 0;
+    font-size: 11px;
+    padding: 13px 0;
   }
 }
+```
