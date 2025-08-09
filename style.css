@@ -1,21 +1,5 @@
-Com base no seu pedido, otimizei o código CSS para usar unidades `px` e aprimorei a responsividade com a adição de um novo ponto de interrupção para tablets. O código agora é mais compacto e se adapta de forma mais suave a diferentes tamanhos de tela.
 
-As principais mudanças foram:
 
-  * **Conversão para `px`**: Todas as unidades `rem` foram convertidas para `px` para atender à sua solicitação.
-  * **Responsividade Aprimorada**: Adicionei uma nova `media query` para telas de até **1024px** (típico de tablets e notebooks) para otimizar o layout. A `media query` para celulares foi mantida e ajustada com os novos valores em `px`.
-  * **Otimização do Código**: Agrupei e simplifiquei algumas propriedades para maior concisão, removendo redundâncias.
-
------
-
-### Código CSS Otimizado
-
-```css
-/*
- * ============================================
- * VARIÁVEIS E TEMAS
- * ============================================
- */
 :root {
   /* Modo Escuro (Padrão) */
   --bg-button: url('./assets/moon-stars-svgrepo-com.svg');
@@ -239,4 +223,3 @@ ul {list-style: none; padding: 0;}
     padding: 13px 0;
   }
 }
-```
