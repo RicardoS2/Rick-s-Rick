@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="">
+<html lang="pt-br" class="light">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Ricardo Menezes</title>
+    <title>Ricardo Menezes (new Project)</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -13,51 +13,55 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="background" role="banner" aria-label="Animação de boas-vindas">
+      <h1>Olá 👋 me chame de Rick (^-^)/</h1>
+    </div>
+
+    <div class="container" role="main">
       <header class="profile">
-        <img src="./assets/avatar.png" alt="Avatar de Ricardo Menezes" />
+        <img src="./assets/avatar@2x.png" alt="Avatar de Ricardo Menezes" width="140" height="140" />
         <h1>Ricardo Menezes</h1>
         <p>Calouro de Engenharia Civil e Dev-Talvez :)</p>
       </header>
 
       <main>
-        <div class="switch">
-          <button onclick="toggleMode()" aria-label="Alternar entre modo claro e escuro"></button>
-          <span></span>
+        <div class="switch" role="switch" aria-checked="false" tabindex="0">
+          <button onclick="toggleMode()" aria-label="Alternar entre modo claro e escuro" type="button"></button>
+          <span class="cont"></span>
         </div>
 
-        <nav>
+        <nav aria-label="Links principais">
           <ul class="links">
             <li>
-              <a href="https://github.com/RicardoS2/book" target="_blank">
-                Principal Projeto (inacabado)-
-                <i class="fa-solid fa-code-fork"></i>
+              <a href="https://github.com/RicardoS2/book" target="_blank" rel="noopener noreferrer">
+                Principal Projeto (inacabado)
+                <i class="fa-solid fa-code-fork" aria-hidden="true"></i>
               </a>
             </li>
             <li>
-              <a href="https://www.instagram.com/r.henriques2/" target="_blank">
-                Instagram-
-                <i class="fa-brands fa-instagram"></i>
+              <a href="https://www.instagram.com/r.henriques2/" target="_blank" rel="noopener noreferrer">
+                Instagram
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i>
               </a>
             </li>
             <li>
-              <a href="https://github.com/RicardoS2" target="_blank">
-                GitHub-
-                <i class="fa-brands fa-github"></i>
+              <a href="https://github.com/RicardoS2" target="_blank" rel="noopener noreferrer">
+                GitHub
+                <i class="fa-brands fa-github" aria-hidden="true"></i>
               </a>
             </li>
             <li>
-              <a href="mailto:ricardomenezes1515n@gmail.com">
-                E-mail-
-                <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:ricardomenezes1515n@gmail.com" target="_blank" rel="noopener noreferrer">
+                E-mail
+                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
               </a>
             </li>
           </ul>
         </nav>
 
-        <section id="techs-container" class="techs-container">
+        <section id="techs-container" class="techs-container" aria-label="Tecnologias utilizadas">
           <p class="techs-title">Techs que uso no dia a dia</p>
-          <div class="techs-icons">
+          <div class="techs-icons" aria-hidden="true">
             <i class="fa-brands fa-php"></i>
             <i class="fa-brands fa-react"></i>
             <i class="fa-brands fa-js"></i>
@@ -67,7 +71,7 @@
         </section>
       </main>
 
-      <footer class="footer">
+      <footer class="footer" role="contentinfo">
         <p>© 2025 Ricardo Menezes</p>
       </footer>
     </div>

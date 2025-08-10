@@ -1,15 +1,26 @@
-function toggleMode() {
-  const html = document.documentElement;
-  html.classList.toggle('light');
+(() => {
+  document.addEventListener('DOMContentLoaded', () => {
+    const bg = document.querySelector('.background');
+    if (bg) {
+      bg.addEventListener('animationend', (e) => {
+        if (e.animationName === 'backgroundHide') bg.remove();
+      });
+    }
+    toggleMode(false); // Inicializa no modo escuro
+  });
 
-  const img = document.querySelector('.profile img');
-  const isLightMode = html.classList.contains('light');
+  window.toggleMode = (toggle = true) => {
+    const html = document.documentElement;
+    if (toggle) html.classList.toggle('light');
 
-  if (isLightMode) {
-    img.setAttribute('src', './assets/avatar@2x.png');
-    img.setAttribute('alt', 'Avatar de Ricardo Menezes no modo claro');
-  } else {
-    img.setAttribute('src', './assets/avatar.png');
-    img.setAttribute('alt', 'Avatar de Ricardo Menezes no modo escuro');
-  }
-}
+    const isLight = html.classList.contains('light');
+    const img = document.querySelector('.profile img');
+
+    img.src = isLight ? './assets/avatar-3.png' : './assets/avatar@2x.png';
+    img.alt = isLight ? 'Avatar de Ricardo Menezes in light mode' : 'Avatar de Ricardo Menezes in dark mode';
+
+    // Atualiza atributo aria-checked para switch
+    const switchElem = document.querySelector('.switch');
+    if (switchElem) switchElem.setAttribute('aria-checked', isLight);
+  };
+})();
